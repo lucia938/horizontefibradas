@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internet fibra óptica para MEI e microempresas em Belo Horizonte. Conexão estável, suporte local e planos pensados para o seu negócio.">
+    <title>Horizontes Fibra • Internet Fibra para MEI em BH</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8fafc;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            background: #0a1f3f;
+            color: #fff;
+            padding: 10px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        .topbar a {
+            color: #ffd966;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* HEADER */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0a1f3f;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #e67e22;
+        }
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: #e67e22;
+        }
+        .btn-top {
+            background: #e67e22;
+            color: #fff !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .btn-top:hover {
+            background: #d35400;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #0a1f3f 0%, #1a3a5c 100%);
+            color: #fff;
+            padding: 70px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            opacity: 0.95;
+        }
+        .hero-img {
+            max-width: 600px;
+            width: 100%;
+            border-radius: 12px;
+            margin: 30px auto 0;
+            display: block;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .btn-hero {
+            background: #e67e22;
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 8px;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-hero:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: #0a1f3f;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .card img {
+            width: 70px;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #0a1f3f;
+        }
+
+        /* ABOUT */
+        .about-flex {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1 1 450px;
+        }
+        .about-img {
+            flex: 1 1 400px;
+        }
+        .about-img img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        /* PLANS TABLE */
+        .plans-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .plans-table th {
+            background: #0a1f3f;
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+        }
+        .plans-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .plans-table tr:hover {
+            background: #f1f7ff;
+        }
+        .badge {
+            background: #e67e22;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+        .contact-form button {
+            background: #e67e22;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a1f3f;
+            color: #ccc;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-grid h4 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .footer-grid a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+        .footer-grid a:hover {
+            color: #e67e22;
+        }
+        .footer-bottom {
+            border-top: 1px solid #2c3e50;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin-left: 10px;
+                font-size: 14px;
+            }
+            .hero h1 {
+                font-size: 26px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="container">
+            📞 <a href="tel:+553132018081">(31) 3201-8081</a> | 
+            📍 Belo Horizonte - MG | 
+            ✉️ <a href="mailto:financeiro@horizontes.net.br">financeiro@horizontes.net.br</a>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-flex">
+            <a href="#" class="logo">Horizontes <span>Fibra</span></a>
+            <nav>
+                <a href="#planos">Planos MEI</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#contato">Contato</a>
+                <a href="#contato" class="btn-top">Assinar Agora</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Internet Fibra Óptica para MEI e Pequenas Empresas</h1>
+            <p>Conexão estável, rápida e com suporte local em Belo Horizonte. Planos pensados para o seu negócio crescer sem travar.</p>
+            <a href="#planos" class="btn-hero">Ver Planos para MEI</a>
+            <!-- Imagem relacionada: fibra óptica / tecnologia -->
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop" 
+                 alt="Conexão de fibra óptica" class="hero-img">
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Por que escolher a Horizontes Fibra?</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="https://img.icons8.com/fluency/96/fiber-optic-cable.png" alt="Fibra óptica">
+                    <h3>Fibra 100% Óptica</h3>
+                    <p>Tecnologia FTTH de ponta a ponta, sem oscilações e com latência ultra baixa para chamadas e vídeos.</p>
+                </div>
+                <div class="card">
+                    <img src="https://img.icons8.com/fluency/96/support.png" alt="Suporte">
+                    <h3>Suporte Local em BH</h3>
+                    <p>Equipe técnica em Belo Horizonte. Atendimento rápido, sem robôs. Fale com gente de verdade.</p>
+                </div>
+                <div class="card">
+                    <img src="https://img.icons8.com/fluency/96/small-business.png" alt="MEI">
+                    <h3>Planos para MEI</h3>
+                    <p>Condições especiais para microempreendedores. Internet que cabe no orçamento do seu negócio.</p>
+                </div>
+                <div class="card">
+                    <img src="https://img.icons8.com/fluency/96/lock.png" alt="Segurança">
+                    <h3>Conexão Segura</h3>
+                    <p>IP fixo disponível, ideal para sistemas de nota fiscal, câmeras e acesso remoto com segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section id="planos" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Planos de Internet Fibra para MEI</h2>
+            <table class="plans-table">
+                <thead>
+                    <tr>
+                        <th>Plano</th>
+                        <th>Velocidade</th>
+                        <th>Upload</th>
+                        <th>Benefício MEI</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Start MEI</strong></td>
+                        <td>300 Mega</td>
+                        <td>150 Mega</td>
+                        <td><span class="badge">1º mês grátis</span></td>
+                        <td><a href="#contato" class="btn-top">Contratar</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Business MEI</strong></td>
+                        <td>500 Mega</td>
+                        <td>250 Mega</td>
+                        <td><span class="badge">IP Fixo Grátis</span></td>
+                        <td><a href="#contato" class="btn-top">Contratar</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Premium MEI</strong></td>
+                        <td>1 Giga</td>
+                        <td>500 Mega</td>
+                        <td><span class="badge">IP Fixo + Suporte Prioritário</span></td>
+                        <td><a href="#contato" class="btn-top">Contratar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+                * Consulte disponibilidade para o seu CEP. Preços sob consulta. Planos sujeitos a análise de viabilidade técnica.
+            </p>
+        </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+        <div class="container about-flex">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left;">Sobre a Horizontes Fibra</h2>
+                <p>A <strong>Horizontes Telecom LTDA</strong>, nome fantasia <strong>Horizontes Fibra</strong>, é uma provedora de internet fibra óptica com sede em Belo Horizonte - MG. Fundada em 18/11/2014, somos uma microempresa com foco em atender MEIs, micro e pequenas empresas que precisam de conexão estável e suporte de verdade.</p>
+                <p>Atuamos com <strong>Serviços de Comunicação Multimídia (SCM)</strong>, instalação e manutenção elétrica, e comércio de equipamentos de informática e telefonia. Nossa missão é oferecer internet de qualidade com atendimento humano e transparente.</p>
+                <p><strong>CNPJ:</strong> 21.427.520/0001-55<br>
+                <strong>Razão Social:</strong> Horizontes Telecom LTDA<br>
+                <strong>Sócio-Administrador:</strong> Brunner Creme dos Reis Gomes</p>
+            </div>
+            <div class="about-img">
+                <!-- Imagem de equipe ou instalação -->
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop" 
+                     alt="Instalação de fibra óptica">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Fale com a Horizontes Fibra</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 15px; color: #0a1f3f;">Nossos Canais</h3>
+                    <p>📞 <strong>(31) 3201-8081</strong></p>
+                    <p>📞 <strong>(31) 3390-9494</strong></p>
+                    <p>✉️ <strong>financeiro@horizontes.net.br</strong></p>
+                    <p>📍 Rua Mario Salustiano, 172 - Goiania<br>Belo Horizonte - MG, CEP: 31950-320</p>
+                    <p>🕒 Seg. a Sex. — 08h às 18h</p>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="post">
+                        <input type="text" placeholder="Seu nome completo" required>
+                        <input type="email" placeholder="E-mail" required>
+                        <input type="tel" placeholder="WhatsApp / Telefone" required>
+                        <textarea rows="4" placeholder="Mensagem (CEP, plano desejado, etc.)"></textarea>
+                        <button type="submit">Solicitar Contato</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Horizontes Fibra</h4>
+                    <p>Horizontes Telecom LTDA<br>CNPJ: 21.427.520/0001-55<br>IE-MG: 002467586.00-28</p>
+                </div>
+                <div>
+                    <h4>Links Úteis</h4>
+                    <a href="#">Planos MEI</a>
+                    <a href="#">Sobre Nós</a>
+                    <a href="#">Contato</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+                    <a href="termos-de-uso.html">Termos de Uso</a>
+                </div>
+                <div>
+                    <h4>Atendimento</h4>
+                    <p>(31) 3201-8081</p>
+                    <p>financeiro@horizontes.net.br</p>
+                    <p>Belo Horizonte - MG</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 - 2026 Horizontes Fibra. Todos os direitos reservados. | Provedor de Internet Fibra em Belo Horizonte.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
